@@ -16,7 +16,6 @@ var lengthOfLastWord = function (s) {
     let endValue = splitValue[splitValue.length - 1]
     return endValue.length
 };
-console.log(lengthOfLastWord("Hello World"))
 
 // @lc code=end
 
