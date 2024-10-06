@@ -5,5 +5,4 @@ global.test = test;
 global.describe = describe;
 global.it = it;
 
-global.todo = test.todo;
-global.skip = test.skip;
+global.__dirname = __dirname;
