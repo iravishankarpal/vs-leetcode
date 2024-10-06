@@ -33,7 +33,4 @@ var searchInsert = function (nums, target) {
 // @lc code=end
 
 
-const Input = { nums: [1, 3, 5, 6], target: 5 }
-console.log(searchInsert(Input.nums, Input.target))
-
 module.exports = searchInsert

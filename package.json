@@ -1,0 +1,9 @@
+{
+  "scripts": {
+    "test": "vitest"
+  },
+  "dependencies": {
+    "@vitest/coverage-v8": "^2.1.2",
+    "vitest": "^2.1.2"
+  }
+}

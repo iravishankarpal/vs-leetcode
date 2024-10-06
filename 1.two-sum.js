@@ -12,33 +12,18 @@
  */
 var twoSum = function (nums, target) {
     let dir = {}
-    for (index in nums) {
-        let value = nums[index]
+    for (let s in nums) {
+        let value = nums[s]
         let valueInDir = (target - value) in dir
         if (valueInDir) {
-            return [dir[target - value], index]
+            let v = dir[target - value]
+            return [parseInt(v), parseInt(s)]
         } else {
-            dir[value] = index
+            dir[value] = s
         }
     }
     console.log(dir)
 
 };
 // @lc code=end
-console.log(twoSum([2, 7, 11, 15], 9))
-
-
-/*
-    input :  [2, 7, 11, 15]
-    targe : 9
-    empty dir {}
-
-    1 iter 
-                if target - 2 in dir 
-                not 
-                add in dir
-    2 iter  
-                if target - 7 in dir
-                yes return [current intex , number[target-7]]
-
-*/
+export default twoSum
