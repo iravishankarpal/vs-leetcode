@@ -11,19 +11,20 @@
  * @return {number[]}
  */
 var twoSum = function (nums, target) {
-    let dir = {}
+    let dir = {};
     for (let s in nums) {
-        let value = nums[s]
-        let valueInDir = (target - value) in dir
+        let value = nums[s];
+        let valueInDir = target - value in dir;
         if (valueInDir) {
-            let v = dir[target - value]
-            return [parseInt(v), parseInt(s)]
+            let v = dir[target - value];
+            return [parseInt(v), parseInt(s)];
         } else {
-            dir[value] = s
+            dir[value] = s;
         }
     }
-    console.log(dir)
-
+    console.log(dir);
 };
 // @lc code=end
-export default twoSum
+export default twoSum;
+
+console.log(twoSum([2, 7, 11, 15], 9));
