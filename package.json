@@ -8,6 +8,8 @@
     },
     "dependencies": {
         "@vitest/coverage-v8": "^2.1.2",
+        "debug": "^4.4.0",
+        "nodemon": "^3.1.9",
         "vitest": "^2.1.2"
     }
 }

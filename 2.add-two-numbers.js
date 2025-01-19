@@ -19,68 +19,49 @@
  */
 var addTwoNumbers = function (l1, l2) {
 
-    if (!l1) return l2
-    if (!l2) return l1
-
-
-    if (!l1 && !l2) return null
-
-    class ListNode {
+    class Node {
         constructor(val, next) {
             this.val = (val === undefined ? 0 : val)
             this.next = (next === undefined ? null : next)
         }
     }
-
-    let head = new ListNode()
-    let current = head
-
-    let carry = 0
-
-    while (l1 || l2 || carry) {
-
-        let sum = (l1 ? l1.val : 0) + (l2 ? l2.val : 0) + carry
-
-        current.next = new ListNode(sum % 10)
-
-        current = current.next
-
-        carry = Math.floor(sum / 10)
-
-        l1 = l1 ? l1.next : l1
-
-        l2 = l2 ? l2.next : l2
-
+    class LinkedList {
+        constructor() {
+            this.head = null
+            this.tail = null
+            this.length = 0
+        }
+        addNode(val) {
+            const node = new Node(val)
+            if (this.head === null) {
+                this.head = node
+                this.tail = node
+            } else {
+                this.tail.next = node
+                this.tail = node
+            }
+            this.length++
+        }
+    }
+    let getSum = (head) => {
+        let sum = ""
+        for (let current = head; current != null; current = current.next) {
+            sum += current.val
+        }
+        sum = sum.split("").reverse().join("")
+        return parseInt(sum)
     }
 
-    return head.next
+    let value = getSum(l1) + getSum(l2)
+    value = value.toString()
+    value = value.split("").reverse().join("")
+    let linkList = new LinkedList()
+    for (let i = 0; i < value.length; i++) {
+        linkList.addNode(parseInt(value[i]))
+    }
+    return linkList
+
 };
+
 // @lc code=end
-let linklist = {
-    val: 2,
-    next: {
-        val: 4,
-        next: {
-            val: 3,
-            next: null
-        }
-    }
-}
-let linklist2 = {
-    val: 5,
-    next: {
-        val: 6,
-        next: {
-            val: 4,
-            next: null
-        }
-    }
-}
-/*
-Input: l1 = [2,4,3], l2 = [5,6,4]
-Output: [7,0,8]
-Explanation: 342 + 465 = 807.
-*/
 
-
-console.log(addTwoNumbers(linklist, linklist2))
